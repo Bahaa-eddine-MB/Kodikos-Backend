@@ -10,7 +10,6 @@ const handleErrors = (err) => {
     ddl: "",
     progress: "",
     documents: "",
-    
   };
   if (err.message.includes("task validation failed")) {
     Object.values(err.errors).forEach(({ properties }) => {
