@@ -6,7 +6,10 @@ const submissionShema = new mongoose.Shema(
       type: Date,
       default: Date.now,
     },
-    documents: { type: [Buffer], required: false },
+    documents: {
+      type: [Buffer],
+      required: false,
+    },
     title: {
       type: String,
       required: true,
