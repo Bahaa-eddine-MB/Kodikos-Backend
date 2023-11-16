@@ -17,6 +17,23 @@ app.use((req,res, next) => {
   next()
 })
 
+//Routes
+const userRoutes = require('../routes/userRoute')
+const submissionRoutes = require('../routes/submissionRoute')
+const bureauRoutes = require('../routes/bureauRoute')
+const projectRoutes = require('../routes/projectRoute')
+const notificationRoutes = require('../routes/notificationRoute')
+const problemRoutes = require('../routes/problemRoute')
+const taskRoutes = require('../routes/taskRoute')
+
+app.use('/api/user', userRoutes)
+app.use('/api/submission', submissionRoutes)
+app.use('/api/bureau', bureauRoutes)
+app.use('/api/project', projectRoutes)
+app.use('/api/notification', notificationRoutes)
+app.use('/api/problem', problemRoutes)
+app.use('/api/task', taskRoutes)
+
 // connecting to DB
 mongoose.connect(process.env.URI)
 .then(() => {
