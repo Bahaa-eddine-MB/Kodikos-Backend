@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const submissionShema = new mongoose.Shema(
+const submissionShema = new mongoose.Schema(
   {
     date: {
       type: Date,

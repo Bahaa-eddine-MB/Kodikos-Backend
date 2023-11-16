@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const notificationShema = new mongoose.Shema({
+const notificationShema = new mongoose.Schema({
     title: {
         type: String,
         required: true
