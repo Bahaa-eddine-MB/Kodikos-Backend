@@ -23,6 +23,10 @@ const submissionShema = new mongoose.Shema(
       type: String,
       required: true,
     },
+    projectId: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

@@ -10,6 +10,7 @@ const handleErrors = (err) => {
     ddl: "",
     progress: "",
     documents: "",
+    idProject:""
     
   };
   if (err.message.includes("task validation failed")) {
@@ -21,7 +22,7 @@ const handleErrors = (err) => {
 };
 
 module.exports.task_post = async (req, res, next) => {
-  const { title, description, email, type, userId, ddl, progress, documents } =
+  const { title, description, email, type, userId, ddl, progress, documents,idProject } =
     req.body;
 
   try {
@@ -34,6 +35,7 @@ module.exports.task_post = async (req, res, next) => {
       ddl,
       progress,
       documents,
+      idProject
     });
     res.status(201).json(task);
   } catch (err) {
@@ -59,9 +61,9 @@ module.exports.tasks_get_user = async (req, res, next) => {
     .catch(next);
 };
 
-module.exports.tasks_get_type = async (req, res, next) => {
-  const type = req.params.type;
-  Task.find({ type: type })
+module.exports.tasks_get_project = async (req, res, next) => {
+  const projectId = req.params.type;
+  Task.find({ idProject: projectId })
     .then(function (tasks) {
       res.send(tasks);
     })

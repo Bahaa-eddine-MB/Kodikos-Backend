@@ -6,6 +6,10 @@ const taskShema = new mongoose.Shema(
       type: Date,
       default: Date.now,
     },
+    idProject: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
