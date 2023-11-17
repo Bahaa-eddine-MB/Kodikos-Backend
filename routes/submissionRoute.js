@@ -10,11 +10,11 @@ const {
 } = require('../controller/SubmissionController')
 
 router.get('/', submission_get)
-router.post('/add', submission_post)
-router.get('/getOne', submission_get_one)
-router.get('/getUser', submission_get_user)
-router.get('/getTask', submission_get_task)
-router.put('/', submission_put)
+router.post('/', submission_post)
+router.get('/:id', submission_get_one)
+router.get('/getUser/:id', submission_get_user)
+router.get('/getTask/:id', submission_get_task)
+router.put('/:id', submission_put)
 router.delete('/:id', submission_delete)
 
 module.exports = router

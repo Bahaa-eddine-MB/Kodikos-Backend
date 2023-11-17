@@ -20,7 +20,7 @@ module.exports.Problem_post = async (req, res, next) => {
   const { title, description, type, userId, bureauId } = req.body;
 
   try {
-    const problem = await Problem.create({
+    const problem = await Problem.create({ 
       title,
       description,
       type,
@@ -74,7 +74,7 @@ module.exports.Problem_get_one = async (req, res, next) => {
 module.exports.Problem_put = (req, res, next) => {
   Problem.findByIdAndUpdate({ _id: req.params.id }, req.body)
     .then(function () {
-      Product.findOne({ _id: req.params.id }).then(function (problem) {
+      Problem.findOne({ _id: req.params.id }).then(function (problem) {
         res.send(problem);
       });
     })
@@ -82,7 +82,7 @@ module.exports.Problem_put = (req, res, next) => {
 };
 
 module.exports.Problem_delete = (req, res, next) => {
-  Problem.findByIdAndRemove({ _id: req.params.id })
+  Problem.findByIdAndDelete({ _id: req.params.id })
     .then(function (problem) {
       res.send(problem);
     })

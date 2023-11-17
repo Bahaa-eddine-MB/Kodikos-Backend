@@ -12,11 +12,11 @@ const {
 
 router.get('/', tasks_get)
 router.post('/', task_post)
-router.get('/getOne', tasks_get_one)
-router.get('/getUser', tasks_get_user)
-router.get('/getProject', tasks_get_project)
-router.put('/', task_put)
+router.get('/:id', tasks_get_one)
+router.get('/getUser/:id', tasks_get_user)
+router.get('/getProject/:id', tasks_get_project)
+router.put('/:id', task_put)
 router.delete('/:id', task_delete)
-router.get('/:id', taskSearch_get)
+router.get('/search/:id', taskSearch_get)
 
 module.exports = router

@@ -61,7 +61,7 @@ module.exports.Notification_get_one = async (req, res, next) => {
 module.exports.Notification_put = (req, res, next) => {
   Notification.findByIdAndUpdate({ _id: req.params.id }, req.body)
     .then(function () {
-      Product.findOne({ _id: req.params.id }).then(function (notification) {
+      Notification.findOne({ _id: req.params.id }).then(function (notification) {
         res.send(notification);
       });
     })
@@ -69,7 +69,7 @@ module.exports.Notification_put = (req, res, next) => {
 };
 
 module.exports.Notification_delete = (req, res, next) => {
-  Notification.findByIdAndRemove({ _id: req.params.id })
+  Notification.findByIdAndDelete({ _id: req.params.id })
     .then(function (notification) {
       res.send(notification);
     })

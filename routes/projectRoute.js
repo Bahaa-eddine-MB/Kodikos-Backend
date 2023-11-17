@@ -8,9 +8,9 @@ const {
 } = require('../controller/ProjectController')
 
 router.get('/', Project_get)
-router.post('/add', Project_post)
-router.get('/getOne', Project_get_one)
-router.put('/', Project_put)
+router.post('/', Project_post)
+router.get('/:id', Project_get_one)
+router.put('/:id', Project_put)
 router.delete('/:id', Project_delete)
 
 module.exports = router

@@ -83,7 +83,7 @@ module.exports.tasks_get_one = async (req, res, next) => {
 module.exports.task_put = (req, res, next) => {
   Task.findByIdAndUpdate({ _id: req.params.id }, req.body)
     .then(function () {
-      Product.findOne({ _id: req.params.id }).then(function (task) {
+      Task.findOne({ _id: req.params.id }).then(function (task) {
         res.send(task);
       });
     })
@@ -91,7 +91,7 @@ module.exports.task_put = (req, res, next) => {
 };
 
 module.exports.task_delete = (req, res, next) => {
-  Task.findByIdAndRemove({ _id: req.params.id })
+  Task.findByIdAndDelete({ _id: req.params.id })
     .then(function (task) {
       res.send(task);
     })
