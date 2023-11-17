@@ -1,4 +1,7 @@
 const router = require('express').Router()
+const multer = require("multer");
+
+
 const {
     submission_post,
     submission_get,
@@ -10,7 +13,7 @@ const {
 } = require('../controller/SubmissionController')
 
 router.get('/', submission_get)
-router.post('/', submission_post)
+router.post('/',submission_post)
 router.get('/:id', submission_get_one)
 router.get('/getUser/:id', submission_get_user)
 router.get('/getTask/:id', submission_get_task)

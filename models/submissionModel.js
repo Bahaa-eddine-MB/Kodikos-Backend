@@ -7,7 +7,7 @@ const submissionShema = new mongoose.Schema(
       default: Date.now,
     },
     documents: {
-      type: [Buffer],
+      type: Array,
       required: false,
     },
     title: {

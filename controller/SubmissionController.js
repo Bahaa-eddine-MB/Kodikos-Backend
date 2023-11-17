@@ -6,7 +6,7 @@ const handleErrors = (err) => {
     description: "",
     taskId: "",
     userId: "",
-    projectId:""
+    projectId: "",
   };
   if (err.message.includes("submission validation failed")) {
     Object.values(err.errors).forEach(({ properties }) => {
@@ -17,8 +17,7 @@ const handleErrors = (err) => {
 };
 
 module.exports.submission_post = async (req, res, next) => {
-  const { title, description, taskId, userId, documents,projectId } = req.body;
-
+  const { title, description, taskId, userId, documents, projectId } = req.body;
   try {
     const submission = await Submission.create({
       title,
@@ -26,10 +25,11 @@ module.exports.submission_post = async (req, res, next) => {
       taskId,
       userId,
       documents,
-      projectId
+      projectId,
     });
     res.status(201).json(submission);
   } catch (err) {
+    console.log(err);
     const errors = handleErrors(err);
     res.status(400).json({ errors });
   }
@@ -97,5 +97,3 @@ module.exports.submission_delete = (req, res, next) => {
     })
     .catch(next);
 };
-
-
