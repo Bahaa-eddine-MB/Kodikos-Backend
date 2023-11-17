@@ -20,14 +20,13 @@ const taskShema = new mongoose.Schema(
     },
     email: {
       type: String,
-      unique: true,
       required: true,
     },
     type: {
       type: String,
       required: true,
     },
-    userId: {
+    userId: { 
       type: String,
       required: true,
     },

@@ -18,12 +18,12 @@ module.exports.Notification_post = async (req, res, next) => {
   const { title, description, userId } = req.body;
 
   try {
-    const Notification = await Notification.create({
+    const notification = await Notification.create({
       title,
       description,
-      userId,
+      userId
     });
-    res.status(201).json(Notification);
+    res.status(201).json(notification);
   } catch (err) {
     const errors = handleErrors(err);
     res.status(400).json({ errors });

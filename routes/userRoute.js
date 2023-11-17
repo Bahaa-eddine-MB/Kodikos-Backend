@@ -13,6 +13,6 @@ router.get('/:id', user_get)
 router.post('/signup', signup_post)
 router.post('/login', login_post) 
 router.put('/updatePassword', update_password)
-router.get('/logout', logout_get) 
+router.put('/logout', logout_get) 
 
 module.exports = router
