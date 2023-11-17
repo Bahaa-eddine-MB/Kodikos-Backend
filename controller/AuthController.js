@@ -1,7 +1,7 @@
-const User = require("../models/userModel");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
 
+const User = require('../models/userModel')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
 const handleErrors = (err) => {
   console.log(err.message, err.code);
   let errors = { email: "", password: "" };
@@ -116,3 +116,5 @@ module.exports.logout_get = (req, res) => {
   }
   // res.redirect('/')
 };
+
+
