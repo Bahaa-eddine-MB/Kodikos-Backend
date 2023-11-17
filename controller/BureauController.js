@@ -67,7 +67,7 @@ module.exports.Bureau_put = (req, res, next) => {
 };
 
 module.exports.Bureau_delete = (req, res, next) => {
-  Bureau.findByIdAndRemove({ _id: req.params.id })
+  Bureau.findByIdAndDelete({ _id: req.params.id })
     .then(function (bureau) {
       res.send(bureau);
     })

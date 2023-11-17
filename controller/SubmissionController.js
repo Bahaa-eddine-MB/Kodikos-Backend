@@ -83,7 +83,7 @@ module.exports.submission_get_one = async (req, res, next) => {
 module.exports.submission_put = (req, res, next) => {
   Submission.findByIdAndUpdate({ _id: req.params.id }, req.body)
     .then(function () {
-      Product.findOne({ _id: req.params.id }).then(function (submission) {
+      Submission.findOne({ _id: req.params.id }).then(function (submission) {
         res.send(submission);
       });
     })
@@ -91,7 +91,7 @@ module.exports.submission_put = (req, res, next) => {
 };
 
 module.exports.submission_delete = (req, res, next) => {
-  Submission.findByIdAndRemove({ _id: req.params.id })
+  Submission.findByIdAndDelete({ _id: req.params.id })
     .then(function (submission) {
       res.send(submission);
     })

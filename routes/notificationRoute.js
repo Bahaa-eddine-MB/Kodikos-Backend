@@ -9,10 +9,10 @@ const {
 } = require('../controller/NotificationController')
 
 router.get('/', Notification_get)
-router.post('/add', Notification_post)
-router.get('/getOne', Notification_get_one)
-router.get('/getUser', Notification_get_user)
-router.put('/', Notification_put)
+router.post('/', Notification_post) //prblm
+router.get('/:id', Notification_get_one)
+router.get('/getUser/:id', Notification_get_user)
+router.put('/:id', Notification_put)
 router.delete('/:id', Notification_delete)
 
 module.exports = router

@@ -54,7 +54,7 @@ module.exports.Project_get_one = async (req, res, next) => {
 module.exports.Project_put = (req, res, next) => {
   Project.findByIdAndUpdate({ _id: req.params.id }, req.body)
     .then(function () {
-      Product.findOne({ _id: req.params.id }).then(function (project) {
+      Project.findOne({ _id: req.params.id }).then(function (project) {
         res.send(project);
       });
     })
@@ -62,7 +62,7 @@ module.exports.Project_put = (req, res, next) => {
 };
 
 module.exports.Project_delete = (req, res, next) => {
-  Project.findByIdAndRemove({ _id: req.params.id })
+  Project.findByIdAndDelete({ _id: req.params.id })
     .then(function (project) {
       res.send(project);
     })

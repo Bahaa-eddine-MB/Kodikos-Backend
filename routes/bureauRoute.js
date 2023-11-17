@@ -9,10 +9,10 @@ const {
 } = require('../controller/BureauController')
 
 router.get('/', Bureau_get)
-router.post('/add', Bureau_post)
-router.get('/getOne', Bureau_get_one)
-router.get('/getUser', Bureau_get_user)
-router.put('/', Bureau_put)
+router.post('/', Bureau_post)
+router.get('/:id', Bureau_get_one)
+router.get('/getUser/:id', Bureau_get_user)
+router.put('/:id', Bureau_put)
 router.delete('/:id', Bureau_delete)
 
 module.exports = router
