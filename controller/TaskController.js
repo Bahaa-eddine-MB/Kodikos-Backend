@@ -10,7 +10,7 @@ const handleErrors = (err) => {
     ddl: "",
     progress: "",
     documents: "",
-    idProject:"" 
+    idProject: "",
   };
   if (err.message.includes("task validation failed")) {
     Object.values(err.errors).forEach(({ properties }) => {
@@ -21,10 +21,20 @@ const handleErrors = (err) => {
 };
 
 module.exports.task_post = async (req, res, next) => {
-  const { title, description, email, type, userId, ddl, progress, documents,idProject } =
-    req.body;
+  const {
+    title,
+    description,
+    email,
+    type,
+    userId,
+    ddl,
+    progress,
+    documents,
+    idProject,
+  } = req.body;
 
   try {
+
     const task = await Task.create({
       title,
       description,
@@ -34,10 +44,11 @@ module.exports.task_post = async (req, res, next) => {
       ddl,
       progress,
       documents,
-      idProject
+      idProject,
     });
     res.status(201).json(task);
   } catch (err) {
+    console.log(err);
     const errors = handleErrors(err);
     res.status(400).json({ errors });
   }

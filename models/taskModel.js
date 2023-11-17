@@ -20,7 +20,6 @@ const taskShema = new mongoose.Schema(
     },
     email: {
       type: String,
-      unique: true,
       required: true,
     },
     type: {
@@ -40,7 +39,7 @@ const taskShema = new mongoose.Schema(
       default: "uncomplete",
     },
     documents: {
-      type: [String],
+      type: Array,
       default: [],
     },
   },

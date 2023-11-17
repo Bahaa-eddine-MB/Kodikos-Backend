@@ -9,7 +9,7 @@ const {
 } = require('../controller/NotificationController')
 
 router.get('/', Notification_get)
-router.post('/', Notification_post) //prblm
+router.post('/', Notification_post)
 router.get('/:id', Notification_get_one)
 router.get('/getUser/:id', Notification_get_user)
 router.put('/:id', Notification_put)
