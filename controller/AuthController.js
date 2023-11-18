@@ -117,4 +117,14 @@ module.exports.logout_get = (req, res) => {
   // res.redirect('/')
 };
 
-
+module.exports.userSearch_get = async (req, res, next) => {
+  try {
+    const { role } = req.body;
+    const objs = await User.find({
+      role: role
+    });
+    res.send(objs);
+  } catch (error) {
+    res.send({ message: error });
+  }
+};

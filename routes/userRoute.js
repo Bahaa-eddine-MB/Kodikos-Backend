@@ -5,11 +5,13 @@ const {
     signup_post,
     login_post,
     update_password,
-    logout_get
+    logout_get,
+    userSearch_get
 } = require('../controller/AuthController')
 
 router.get('/', all_users_get)
 router.get('/:id', user_get)
+router.post('/byRole', userSearch_get)
 router.post('/signup', signup_post)
 router.post('/login', login_post) 
 router.put('/updatePassword', update_password)
