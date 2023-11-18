@@ -17,6 +17,6 @@ router.get('/getUser/:id', tasks_get_user)
 router.get('/getProject/:id', tasks_get_project)
 router.put('/:id', task_put)
 router.delete('/:id', task_delete)
-router.get('/search/:id', taskSearch_get)
+router.get('/byUserId/:id', taskSearch_get)
 
 module.exports = router

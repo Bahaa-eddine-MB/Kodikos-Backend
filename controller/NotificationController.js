@@ -21,7 +21,7 @@ module.exports.Notification_post = async (req, res, next) => {
     const notification = await Notification.create({
       title,
       description,
-      userId,
+      userId
     });
     res.status(201).json(notification);
   } catch (err) {

@@ -111,12 +111,14 @@ module.exports.task_delete = (req, res, next) => {
 
 module.exports.taskSearch_get = async (req, res, next) => {
   try {
-    const findname = req.params.title;
+    const {id} = req.params
+    console.log(id);
     const objs = await Task.find({
-      $or: [{ title: { $regex: findname } }],
+      userId: id
     });
     res.send(objs);
   } catch (error) {
     res.send({ message: error });
   }
 };
+
